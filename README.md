@@ -43,3 +43,27 @@
 * Ensure that the `JDBC URL` matches the url listed in the terminal.
   * If the `JDBC URL` does not match the url of the database, H2 will create a new database for the URL that was listed in `JDBC URL`.
     * This means that you will not be able to see any data for your database if you enter the wrong JDBC URL. 
+<br><br>
+
+### Introduction to Spring MVC
+![image](https://i.imgur.com/Pd13Au6.png)
+<br>
+* **MVC** stands for **M**odel, **V**iew, **C**ontroller.
+  * MVC is a programming paradigm on how to develop applications.<br><br>
+  * **Model**
+    * Is a simple POJO with collection of preoperties which may or may not be used by the view.<br><br>
+  * **View**
+    * Data as requested by the client. Implemented with JSP, Thymeleaf, Jackson, etc. Can be HTML, JSON, XML, text, etc.<br><br>
+  * **Controller**
+    * Java class implemented to handle request mapping. 
+    * Should be a "traffic cop" and contain minimal business logic. 
+    * Typically works in conjunction with a service, which contains business logic.<br><br>
+  * When a client sends a request, that request is handled by the controller.
+    * The **controller** is responsible for handling requests and facilitating responses.
+    * The controller may or may not need to invoke some business logic on the backend.
+    * The result of a controller is the population of a **model**. This is usually a POJO, or some type or data structure.
+  * The model is provided to the **view**.
+  * The view layer handles the rendering of the model or how the client requests the data.
+
+![image](https://i.imgur.com/7HZRKBt.png)
+<br><br>
