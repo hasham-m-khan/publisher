@@ -24,3 +24,9 @@
   * Be sure to constructor inject your repos in the class so that you can add data to them through the run() method.
 <br><br>
 
+### Publisher Relationships
+* Create a JPA entity in the domain package.
+* Establish relationships with other entities in the JPA entity.
+* Create a repository for the JPA entity in the repositories package.
+* Finally, initialize data through the CommandLineRunner class.
+<br><br>

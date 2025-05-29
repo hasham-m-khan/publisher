@@ -24,32 +24,45 @@ public class BootStrapData implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Author eric = new Author("Eric", "Evans");
-        Book ddd = new Book("Domain Driven Design", "123456123");
-        eric.getBooks().add(ddd);
-        ddd.getAuthors().add(eric);
-
-        authorRepo.save(eric);
-        bookRepo.save(ddd);
-
-        Author john = new Author("Rod", "Johnson");
-        Book noEJB = new Book("J2EE Development without EJB", "158643521");
-        john.getBooks().add(noEJB);
-        noEJB.getAuthors().add(john);
-
-        authorRepo.save(john);
-        bookRepo.save(noEJB);
+        System.out.println("Started in Bootstrap");
 
         Publisher cr = new Publisher("Canadian Publishers", "123rd ST", "Toronto",
                 "British Columbia", "12345");
+
         Publisher bg = new Publisher("The Botanical Gazette", "1st ST", "New York", "NY",
                 "11421");
 
         publisherRepo.save(cr);
         publisherRepo.save(bg);
 
-        System.out.println("Started in Bootstrap");
+        System.out.println("Publisher Count: " + publisherRepo.count());
+
+        Author eric = new Author("Eric", "Evans");
+        Book ddd = new Book("Domain Driven Design", "123456123");
+        eric.getBooks().add(ddd);
+        ddd.getAuthors().add(eric);
+
+        ddd.setPublisher(cr);
+        cr.getBooks().add(ddd);
+
+        Author john = new Author("Rod", "Johnson");
+        Book noEJB = new Book("J2EE Development without EJB", "158643521");
+        john.getBooks().add(noEJB);
+        noEJB.getAuthors().add(john);
+
+        noEJB.setPublisher(bg);
+        bg.getBooks().add(noEJB);
+
+        authorRepo.save(eric);
+        bookRepo.save(ddd);
+
+        authorRepo.save(john);
+        bookRepo.save(noEJB);
+
+        publisherRepo.save(cr);
+        publisherRepo.save(bg);
+
         System.out.println("Number of books in DB: " + bookRepo.count());
-        System.out.println("Number of publishers in DB: " + publisherRepo.count());
+        System.out.println(cr.getName() + " number of books: " + cr.getBooks().size());
     }
 }
