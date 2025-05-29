@@ -30,3 +30,16 @@
 * Create a repository for the JPA entity in the repositories package.
 * Finally, initialize data through the CommandLineRunner class.
 <br><br>
+
+### H2 Database Console
+* Enable the H2 console in your `application.properties`.
+  * To enable the H2 server: `spring.h2.console.enabled=true`
+* The H2 dashboard is located at `yourdomain.com/h2-console`.
+* Look for a message in your terminal that says `H2 console available at ... 'jdbc.h2.mem:testdb'`
+  * `jdbc.h2.mem:testdb` is the url of the database.
+  * `mem` denotes that the database is in memory.
+  * `testdb` is the schema name.
+* Navigate to the H2 console endpoint.
+* Ensure that the `JDBC URL` matches the url listed in the terminal.
+  * If the `JDBC URL` does not match the url of the database, H2 will create a new database for the URL that was listed in `JDBC URL`.
+    * This means that you will not be able to see any data for your database if you enter the wrong JDBC URL. 
