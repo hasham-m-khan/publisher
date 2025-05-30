@@ -81,4 +81,11 @@
   * ```Model.addAttribute()``` has two parameters, one for the attribute name, and another for the data that will be passed to the view.
 <br><br>
 
+### Thymeleaf Templates
+***Templates*** are a technology used to generate dynamic html.
+  * Thymeleaf is a Java template engine.
+      * Thymeleaf is a natural template engine.
+        * Natural, meaning you can view templates in your browser.
+* By default, Spring Boot will look for templates in the ```resources/templates``` directory.
+<br><br>
 
