@@ -67,3 +67,18 @@
 
 ![image](https://i.imgur.com/7HZRKBt.png)
 <br><br>
+
+### Configuring Spring Controllers
+***Purpose:*** To associate a specific method with a specific request path.
+* Annotate the Controller Class with ```@Controller```.
+  * This will register the class as a Spring Bean and as as Controller in Spring MVC.
+* To map methods to http request paths, use ```@RequestMapping```.
+* A good practice is to put controllers in a new package named "controllers.'
+* The controller returns a string that denotes the view name.
+* The ```@RequestMapping``` method must have a ```Model``` as a parameter because in an MVC paradigm the Model gets returned to the view.
+* The ```Model``` will contain the data that you want to pass to the view.
+  * Data is passed to the ```Model``` through the ```addAttribute()``` method.
+  * ```Model.addAttribute()``` has two parameters, one for the attribute name, and another for the data that will be passed to the view.
+<br><br>
+
+
